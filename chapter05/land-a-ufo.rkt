@@ -12,7 +12,10 @@
 (define (update model)
   (+ model 3))
 
+(define (is-touching-ground model)
+  (>= model 300))
+
 (define (view model)
   (place-image UFO (/ WIDTH 2) model (empty-scene WIDTH HEIGHT)))
 
-(big-bang 0 (on-tick update) (to-draw view))
+(big-bang 0 (on-tick update) (to-draw view) (stop-when is-touching-ground))
