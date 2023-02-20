@@ -18,4 +18,7 @@
 (define (view model)
   (place-image UFO (/ WIDTH 2) model (empty-scene WIDTH HEIGHT)))
 
-(big-bang 0 (on-tick update) (to-draw view) (stop-when is-touching-ground))
+(big-bang 0
+          (on-tick update)
+          (to-draw view)
+          (stop-when is-touching-ground))
